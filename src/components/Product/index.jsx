@@ -1,25 +1,40 @@
 import "./style.css";
 
-const Product = ({ products, currentFunction }) => {
+const Product = ({ products, currentFunction, userInput }) => {
   return (
-    <div>
-      {products.map((item) => (
-        <>
-          <img src={item.img} />
-          <span>{item.name}</span>
-          <span> {item.category}</span>
-          <span>{item.price}</span>
-          <button
-            onClick={(event) => {
-              currentFunction(item.id);
-              event.preventDefault();
-            }}
-          >
-            Adicionar
-          </button>
-        </>
-      ))}
-    </div>
+    <>
+      {userInput !== "" && (
+        <div className="result">
+          Resultado para: <span className="input">{userInput}</span>
+        </div>
+      )}
+      <div className="scroll">
+        {products.map((item) => (
+          <div className="product">
+            <section>
+              <img src={item.img} />
+            </section>
+            <div className="info">
+              <span className="name">{item.name}</span>
+              <span className="category"> {item.category}</span>
+              <span className="price">
+                {" "}
+                R{"$ "}
+                {Number(item.price).toFixed(2)}
+              </span>
+              <button
+                onClick={(event) => {
+                  currentFunction(item.id);
+                  event.preventDefault();
+                }}
+              >
+                Adicionar
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 

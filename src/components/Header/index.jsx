@@ -2,8 +2,10 @@ import "./style.css";
 
 const Header = ({ userInput, setUserInput, currentFunction }) => {
   return (
-    <header>
-      <h1>Burguer Kenzie</h1>
+    <header className="header">
+      <h1>
+        Burguer <span className="smaller">Kenzie</span>
+      </h1>
       <form>
         <input
           className="input"

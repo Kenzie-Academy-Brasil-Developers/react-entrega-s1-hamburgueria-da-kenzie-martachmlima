@@ -1,0 +1,175 @@
+.container {
+  background-color: #f5f5f5;
+  width: 90vw;
+  margin-left: 20px;
+  margin-bottom: 50px;
+  border-radius: 0px 0px 5px 5px;
+  margin: 40px auto;
+}
+
+.container h2 {
+  height: 65px;
+  background: #27ae60;
+  border-radius: 5px 5px 0px 0px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 20px;
+}
+
+.product2 {
+  background-color: #f5f5f5;
+  box-sizing: border-box;
+  border-radius: 5px;
+  width: 80vw;
+  margin-left: 20px;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.foto {
+  width: 80px;
+  height: 80px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.foto img {
+  width: 70px;
+  height: 70px;
+}
+
+.info2 {
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+}
+
+.remove {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: #bdbdbd;
+  left: 80%;
+  position: absolute;
+  cursor: pointer;
+}
+
+.line {
+  width: 90%;
+  height: 2px;
+  background: #e0e0e0;
+  margin: 21px 15px;
+}
+.total {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  color: #828282;
+  margin-left: 20px;
+  display: flex;
+}
+
+.totalPrice {
+  left: 80%;
+  position: absolute;
+}
+
+.container button {
+  width: 70vw;
+  height: 60px;
+  background: #e0e0e0;
+  border: 2px solid #e0e0e0;
+  box-sizing: border-box;
+  border-radius: 8px;
+  color: #828282;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  margin: 20px auto;
+}
+
+.message {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  color: #333333;
+  display: flex;
+  flex-direction: column;
+}
+
+.message span {
+  font-weight: normal;
+  font-size: 14px;
+  color: #828282;
+  margin: 15px;
+}
+
+@media (min-width: 800px) {
+  .container {
+    position: absolute;
+    left: 63%;
+    width: 32vw;
+  }
+
+  .container h2 {
+    margin-top: 0;
+  }
+
+  .container button {
+    width: 20vw;
+  }
+
+  .product2 {
+    width: auto;
+  }
+
+  .foto {
+    width: 70px;
+    height: 70px;
+  }
+
+  .foto img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .name {
+    font-size: 15px;
+  }
+
+  .category {
+    font-size: 10px;
+  }
+
+  .remove {
+    left: 78%;
+  }
+}
+
+@media (min-width: 877px) {
+  .container {
+    left: 72%;
+    width: 27vw;
+  }
+
+  .foto {
+    margin-right: 0;
+  }
+}
+@media (min-width: 940px) {
+  .foto {
+    margin-right: 10px;
+  }
+}
+
+@media (min-width: 1150px) {
+  .container {
+    left: 70%;
+    width: 25vw;
+  }
+}

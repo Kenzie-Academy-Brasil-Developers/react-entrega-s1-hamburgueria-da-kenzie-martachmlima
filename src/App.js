@@ -1,7 +1,6 @@
-import Button from "./components/Button";
-import MenuContainer from "./components/MenuContainer";
 import Product from "./components/Product";
 import Header from "./components/Header";
+import Cart from "./components/Cart";
 import { useState } from "react";
 
 import "./App.css";
@@ -38,14 +37,14 @@ function App() {
     },
     {
       id: 5,
-      name: "Coca",
+      name: "Coca-cola",
       category: "Bebidas",
       price: 4.99,
       img: "https://i.ibb.co/fxCGP7k/coca-cola.png",
     },
     {
       id: 6,
-      name: "Fanta",
+      name: "KenzieMaltine",
       category: "Bebidas",
       price: 4.99,
       img: "https://i.ibb.co/QNb3DJJ/milkshake-ovomaltine.png",
@@ -61,13 +60,20 @@ function App() {
   const [userInput, setUserInput] = useState("");
 
   function showProducts() {
-    setProducts(products.filter((item) => item.name === userInput));
+    setProducts(products.filter((item) => item.category === userInput));
   }
 
   function handleClick(productId) {
     let newProduct = products.find((item) => item.id === productId);
     setCurrentSale([...currentSale, newProduct]);
-    console.log(currentSale);
+  }
+
+  function removeAllProducts() {
+    setCurrentSale([]);
+  }
+
+  function removeOneProduct(itemID) {
+    setCurrentSale(currentSale.filter((item) => item.id !== itemID));
   }
 
   return (
@@ -77,16 +83,16 @@ function App() {
         setUserInput={setUserInput}
         currentFunction={showProducts}
       />
-      <Product products={products} currentFunction={handleClick} />
-      <MenuContainer products={products} />
-
-      <span>
-        Total RS{" "}
-        {currentSale.reduce(
-          (currentTotal, newValue) => currentTotal + newValue.price,
-          0
-        )}
-      </span>
+      <Product
+        products={products}
+        currentFunction={handleClick}
+        userInput={userInput}
+      />
+      <Cart
+        currentSale={currentSale}
+        currentFunction={removeAllProducts}
+        auxFunction={removeOneProduct}
+      />
     </div>
   );
 }
