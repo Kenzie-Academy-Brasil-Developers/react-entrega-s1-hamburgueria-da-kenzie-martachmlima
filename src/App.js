@@ -51,11 +51,7 @@ function App() {
     },
   ]);
 
-  const [filteredProducts, setFilteredProducts] = useState([]);
-
   const [currentSale, setCurrentSale] = useState([]);
-
-  const [cartTotal, setCartTotal] = useState(0);
 
   const [userInput, setUserInput] = useState("");
 

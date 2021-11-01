@@ -8,6 +8,7 @@ const Product = ({ products, currentFunction, userInput }) => {
           Resultado para: <span className="input">{userInput}</span>
         </div>
       )}
+
       <div className="scroll">
         {products.map((item) => (
           <div className="product">
