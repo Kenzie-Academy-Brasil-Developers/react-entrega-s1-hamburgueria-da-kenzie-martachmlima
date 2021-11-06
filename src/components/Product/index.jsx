@@ -11,7 +11,7 @@ const Product = ({ products, currentFunction, userInput }) => {
 
       <div className="scroll">
         {products.map((item) => (
-          <div className="product">
+          <div className="product" key={item.id}>
             <section>
               <img src={item.img} />
             </section>

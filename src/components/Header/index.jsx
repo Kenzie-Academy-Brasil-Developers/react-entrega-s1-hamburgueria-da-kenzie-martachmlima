@@ -9,7 +9,7 @@ const Header = ({ userInput, setUserInput, currentFunction }) => {
       <form>
         <input
           className="input"
-          placeholder="Digitar Pesquisa"
+          placeholder="Que tipo de produto você procura?"
           type="text"
           value={userInput}
           onChange={(event) => setUserInput(event.target.value)}

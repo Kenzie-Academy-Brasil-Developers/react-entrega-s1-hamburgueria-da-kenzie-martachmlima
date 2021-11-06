@@ -13,7 +13,7 @@ const Cart = ({ currentSale, currentFunction, auxFunction }) => {
           <>
             <>
               {currentSale.map((item) => (
-                <div className="product2">
+                <div className="product2" key={item.id}>
                   <section className="foto">
                     <img src={item.img} />
                   </section>
@@ -36,7 +36,7 @@ const Cart = ({ currentSale, currentFunction, auxFunction }) => {
             <div className="line"></div>
             <div className="total">
               Total
-              <span class="totalPrice">
+              <span className="totalPrice">
                 R{"$ "}
                 {currentSale.reduce(
                   (currentTotal, newValue) => currentTotal + newValue.price,

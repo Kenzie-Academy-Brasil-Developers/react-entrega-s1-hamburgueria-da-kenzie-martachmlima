@@ -56,12 +56,18 @@ function App() {
   const [userInput, setUserInput] = useState("");
 
   function showProducts() {
-    setProducts(products.filter((item) => item.category === userInput));
+    setProducts(
+      products.filter(
+        (item) => item.category.slice(0, 1) === userInput.slice(0, 1)
+      )
+    );
   }
 
   function handleClick(productId) {
     let newProduct = products.find((item) => item.id === productId);
-    setCurrentSale([...currentSale, newProduct]);
+    if (currentSale.indexOf(newProduct) === -1) {
+      setCurrentSale([...currentSale, newProduct]);
+    }
   }
 
   function removeAllProducts() {
